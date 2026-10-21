@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bangla Phonetic Typer BD</title>
+<meta name="description" content="Offline bilingual Bangla phonetic typing tool: type Roman letters, get Bangla script live.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <h1 data-i18n="appTitle">Bangla Phonetic Typer</h1>
+    <p class="tagline" data-i18n="tagline">Type Roman letters, get Bangla script - live and 100% offline</p>
+  </div>
+  <button id="langBtn" class="lang-btn" type="button">&#2476;&#2494;&#2434;&#2482;&#2494;</button>
+</header>
+
+<main>
+  <section class="panes">
+    <div class="pane">
+      <div class="pane-head">
+        <label for="romanInput" data-i18n="romanLabel">Roman input</label>
+        <span id="inCount" class="count" aria-live="polite"></span>
+      </div>
+      <textarea id="romanInput" rows="9" data-i18n-ph="romanPh" placeholder="kemon acho? ami bhalo achi..."
+                spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
+      <div class="chips" id="exampleChips"></div>
+    </div>
+    <div class="pane">
+      <div class="pane-head">
+        <span data-i18n="banglaLabel">Bangla output</span>
+        <span id="outCount" class="count" aria-live="polite"></span>
+      </div>
+      <div id="banglaOutput" class="output" aria-live="polite"></div>
+      <div class="actions">
+        <button id="copyBtn" type="button" data-i18n="copy">Copy</button>
+        <button id="dlBtn" type="button" data-i18n="download">Download .txt</button>
+        <button id="clearBtn" type="button" class="ghost" data-i18n="clear">Clear</button>
+      </div>
+    </div>
+  </section>
+
+  <details class="chart" open>
+    <summary data-i18n="chartTitle">Phonetic chart &amp; typing tips</summary>
+    <div class="chart-grid">
+      <div>
+        <h3 data-i18n="vowels">Vowels</h3>
+        <table id="vowelTable" aria-label="vowel chart"></table>
+      </div>
+      <div>
+        <h3 data-i18n="consonants">Consonants</h3>
+        <table id="consTable" aria-label="consonant chart"></table>
+      </div>
+    </div>
+    <ul class="tips" id="tipsList"></ul>
+  </details>
+</main>
+
+<footer>
+  <p data-i18n="disclaimer">A simplified phonetic helper - not Avro-compatible and not a scholarly transliterator. Always proofread the output. Everything runs in your browser; nothing is uploaded.</p>
+  <p class="credit">Bangla Phonetic Typer BD - offline - no sign-up</p>
+</footer>
+
+<script src="js/logic.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
